@@ -7,6 +7,20 @@
     <version>v2</version>
     <name>Devops Webapp</name>
     <url>http://maven.apache.org</url>
+	 <distributionManagement>
+        <!-- For SNAPSHOT versions -->
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <url>http://52.90.25.235:8081/repository/myfirstprojects/</url>
+        </snapshotRepository>
+        
+        <!-- For RELEASE versions -->
+        <repository>
+            <id>nexus-releases</id>
+            <url>http://52.90.25.235:8081/repository/maven-releases/</url>
+        </repository>
+    </distributionManagement>
+    
     <properties>
         <spring.version>4.2.0.RELEASE</spring.version>
         <spring-security.version>4.0.2.RELEASE</spring-security.version>
