@@ -7,20 +7,20 @@
     <version>v2</version>
     <name>Devops Webapp</name>
     <url>http://maven.apache.org</url>
-	 <distributionManagement>
-        <!-- For SNAPSHOT versions -->
-        <snapshotRepository>
-            <id>nexus-snapshots</id>
-            <url>http://52.90.25.235:8081/repository/myfirstprojects/</url>
-        </snapshotRepository>
-        
-        <!-- For RELEASE versions -->
-        <repository>
-            <id>nexus-releases</id>
-            <url>http://52.90.25.235:8081/repository/maven-releases/</url>
-        </repository>
-    </distributionManagement>
-    
+	<repositories>
+    <repository>
+        <id>nexus</id>
+        <name>Nexus Repository</name>
+        <url>http://52.90.25.235:8081/repository/myfirstprojects/</url>
+        <releases>
+            <enabled>true</enabled>
+        </releases>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </repository>
+</repositories>
+
     <properties>
         <spring.version>4.2.0.RELEASE</spring.version>
         <spring-security.version>4.0.2.RELEASE</spring-security.version>
@@ -132,12 +132,6 @@
     	    <version>1.3</version>
     	    <scope>test</scope>
 		</dependency>
-	        <dependency>
-		    <groupId>nexus</groupId>
-		    <artifactId>http://52.90.25.235:8081/repository/myfirstprojects/</artifactId>
-		    <version>1.3.1</version>
-		</dependency>
-		 <!-- Memcached Dependency -->
 		<dependency>
 		    <groupId>net.spy</groupId>
 		    <artifactId>spymemcached</artifactId>
@@ -197,6 +191,7 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.4.0</version> <!-- or latest stable -->
 			</plugin>
+			
 		<!-- CODE COVERAGE -->
  		    <plugin>
  		        <groupId>org.jacoco</groupId>
