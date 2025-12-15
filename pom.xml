@@ -119,8 +119,8 @@
     	    <scope>test</scope>
 		</dependency>
 	        <dependency>
-		    <groupId>commons-fileupload</groupId>
-		    <artifactId>commons-fileupload</artifactId>
+		    <groupId>nexus</groupId>
+		    <artifactId>http://52.90.25.235:8081/repository/myfirstprojects/</artifactId>
 		    <version>1.3.1</version>
 		</dependency>
 		 <!-- Memcached Dependency -->
